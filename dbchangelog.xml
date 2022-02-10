@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"					
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.0.xsd" changeLogId="2a4be6f9-175a-4483-9a4b-e2749c320e1c">
+    <changeSet id="10" author="authorcmdXML">
+        <ext:runCommand>
+            <ext:command>
+                {
+                      create: "collectioncmdXMLfromPOD",
+                      validator: {
+                        $jsonSchema: {
+                    bsonType: "object",
+                    required: ["name", "address"],
+                    properties: {
+                      name: {
+                      bsonType: "string",
+                      description: "The Name"
+                      },
+                  address: {
+                    bsonType: "string",
+                    description: "The Address"
+                        }
+                      }
+                    }
+                      },
+                      validationAction: "warn",
+                      validationLevel: "strict",
+                    
+                    }   
+            </ext:command>
+        </ext:runCommand>
+    </changeSet>
+    </databaseChangeLog>
