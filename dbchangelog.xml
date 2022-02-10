@@ -14,19 +14,19 @@ http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibas
                   create: "collectioncmdXMLfromPOD",
                   validator: {
                     $jsonSchema: {
-                bsonType: "object",
-                required: ["name", "address"],
-                properties: {
-                  name: {
-                  bsonType: "string",
-                  description: "The Name"
-                  },
-              address: {
-                bsonType: "string",
-                description: "The Address"
+                        bsonType: "object",
+                        required: ["name", "address"],
+                        properties: {
+                          name: {
+                          bsonType: "string",
+                          description: "The Name"
+                          },
+                          address: {
+                            bsonType: "string",
+                            description: "The Address"
+                                }
+                          }
                     }
-                  }
-                }
                   },
                   validationAction: "warn",
                   validationLevel: "strict",
